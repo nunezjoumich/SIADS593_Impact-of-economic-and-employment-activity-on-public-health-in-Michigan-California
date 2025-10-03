@@ -2,13 +2,14 @@
 
 **SIADS 593: Milestone I — Impact of Economic & Employment Activity on Public Health**
 
-This repository contains a reproducible pipeline and exploratory analysis investigating how **economic conditions** and **public health outcomes** interact across **Michigan and California** from 1990 to 2010.  
+This repository contains a reproducible pipeline and exploratory analysis investigating how **economic conditions** and **public health outcomes** interact across **Michigan and California** from 1993 to 2010.  
 
 We combine:
 - **CDC Behavioral Risk Factor Surveillance System (BRFSS)** survey data  
-- **Bureau of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS)**  
+- **Bureau of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS)**
+- **Census.gov API Data for County-level Median Household Income**
 
-to explore whether **economic shocks and unemployment trends** align spatially and temporally with **population health patterns** at both **state** and **county** levels.
+to explore whether **economic shocks and unemployment trends** align spatially and temporally with **population health patterns** at a county level, and which source is a better predictor of health outcomes.
 
 ---
 
@@ -20,7 +21,7 @@ to explore whether **economic shocks and unemployment trends** align spatially a
 - **Why Michigan & California:**  
   Michigan experienced major industrial and economic shocks during this period. California serves as a contrasting case with different economic structures, population patterns, and health policy environments.
 
-- **Why 1990–2010:**  
+- **Why 1993–2010:**  
   - BRFSS underwent a major redesign in 2011 (cell phone sampling, weighting), breaking comparability with earlier data.  
   - County-level BRFSS data before 2010 has suppression of detailed FIPS identifiers, so we focus on **state-year aggregates** with some county-level analyses where feasible.
 
@@ -35,8 +36,9 @@ to explore whether **economic shocks and unemployment trends** align spatially a
 |---------|-------------|-------|--------|--------|
 | **BRFSS** | Behavioral Risk Factor Surveillance System survey | 1990–2010 | ZIP → XPT → CSV/Parquet | [CDC](https://www.cdc.gov/brfss/annual_data/) |
 | **LAUS** | Local Area Unemployment Statistics | 1990–2010 | CSV, XLSX, JSON | [BLS LAU Portal](https://www.bls.gov/lau/data.htm) & [Direct Download](https://download.bls.gov/pub/time.series/la/) |
+| **
 | **FIPS / Geocodes** | County crosswalks & identifiers | 2017 vintage | XLSX | [Census Geocodes](https://www2.census.gov/programs-surveys/popest/geographies/2017/all-geocodes-v2017.xlsx) |
-| **(Historical)** Datalumos | Alternative LAUS source with header previews | 1990–2010 | CSV | [Datalumos Repository](https://www.datalumos.org/datalumos/project/227042/version/V1/view) *(downloads currently unreliable)* |
+| **(Historical)** Datalumos | Alternative LAUS source with header previews | 1990–2010 | CSV | [BLS.gov](https://download.bls.gov/pub/time.series/la/) OR [Drive Link](https://drive.google.com/drive/folders/1rPVdtOSz7vInRqKBDUe-VXzEK2rjw7G1?usp=share_link) (Requires UMICH Email) |
 
 Key BRFSS variables: demographics, insurance coverage, chronic conditions, behavioral health factors.  
 Key LAUS variables: unemployment rates, labor force size, employment ratios.
@@ -56,33 +58,35 @@ Key LAUS variables: unemployment rates, labor force size, employment ratios.
 
 ## 📂 Project Structure
 
-```
-project_root/
+```project_root/project_root/
 │
-├── 01_BRFSS_Downloader.ipynb       # Step 1: Download raw BRFSS ZIPs
-├── 01_requirements.txt
+├── README.md                
+├── requirements.txt         
 │
-├── scripts/
-│   ├── 02_parse_brfss_xpt.py
-│   ├── 02a_extract_xpts.py         # Optional helper
-│   ├── 05_download_laus.py         # Planned LAUS download helper (WIP)
-│   ├── 06_merge_brfss_laus.py      # Planned merge script (WIP)
-│   └── deprecated/                 # Old scripts (03_, 04_) not in pipeline
-│
-├── data/
-│   ├── raw/
-│   │   ├── brfss_zips/
-│   │   └── brfss_year/
-│   ├── silver/
-│   │   ├── brfss_state_year.csv
-│   │   ├── laus_state_year.csv
-│   │   └── state_year_merged.csv
-│   └── metadata/
-│       └── canonical_map.yaml
-│
-└── notebooks/
-    ├── 03_analysis.ipynb
-    └── viz_experiments.ipynb
+├── src
+│   │
+│   ├── build_county_crosswalk/
+│   │   ├── 01_build_county_crosswalk.ipynb
+│   │   └── county_crosswalk.ipynb
+│   │
+│   ├── download_brfss/
+│   │   ├── 01_brfss_Downloader.py
+│   │   ├── 02_parse_brfss_xpt.py
+│   │   ├── 03_brfss_batchprocess.ipynb
+│   │   └── brfss_README.md
+│   │    
+│   ├── download_laus/ 
+│   │   └── 01_processing_ladata_files
+│   │
+│   ├── dataviz_ca/
+│   │   ├── 01_merge_LA_BRFSS
+│   │   ├── 02_California_VisualizingBRFSSLAUS.ipynb
+│   │
+│   ├── dataviz_MI/
+│   │   ├── 01_merge_LA_BRFSS
+│   │   ├── 02_Michigan_VisualizingBRFSSLAUS.ipynb
+└── 
+
 ```
 
 ---

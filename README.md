@@ -7,7 +7,7 @@ This repository contains a reproducible pipeline and exploratory analysis invest
 We combine:
 - **CDC Behavioral Risk Factor Surveillance System (BRFSS)** survey data  
 - **Bureau of Labor Statistics (BLS) Local Area Unemployment Statistics (LAUS)**
-- **Census.gov API Data for County-level Median Household Income**
+- **Census.gov API Data for County-level Median Household Income, sourced from SAIPE (2005-2010)**
 
 to explore whether **economic shocks and unemployment trends** align spatially and temporally with **population health patterns** at a county level, and which source is a better predictor of health outcomes.
 
@@ -93,10 +93,12 @@ Key LAUS variables: unemployment rates, labor force size, employment ratios.
 │   ├── dataviz_MI/
 │   │   ├── 01_merge_LA_BRFSS
 │   │   ├── 02_Michigan_VisualizingBRFSSLAUS.ipynb
-└── 
+│
+└── visualizations
+        ├── CA_Visualizations
+        ├── MI_Visualizations 
 
 ```
-
 ---
 
 ## ⚡ Quickstart

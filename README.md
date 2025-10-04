@@ -93,10 +93,12 @@ Key LAUS variables: unemployment rates, labor force size, employment ratios.
 │   ├── dataviz_MI/
 │   │   ├── 01_merge_LA_BRFSS
 │   │   ├── 02_Michigan_VisualizingBRFSSLAUS.ipynb
-└── 
+│
+└── visualizations
+        ├── CA_Visualizations
+        ├── MI_Visualizations 
 
 ```
-
 ---
 
 ## ⚡ Quickstart

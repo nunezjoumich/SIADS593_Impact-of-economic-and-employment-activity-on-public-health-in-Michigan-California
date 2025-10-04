@@ -1,4 +1,4 @@
-# 🧪 BRFSS × LAUS — Michigan vs. California (1990–2010)
+# 🧪 BRFSS × LAUS — Michigan vs. California (1993–2010)
 
 **SIADS 593: Milestone I — Impact of Economic & Employment Activity on Public Health**
 

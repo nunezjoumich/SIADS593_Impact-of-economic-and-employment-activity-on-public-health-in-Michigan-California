@@ -19,7 +19,16 @@ to explore whether **economic shocks and unemployment trends** align spatially a
   Examine how labor market conditions (e.g., unemployment rates) and public health outcomes (e.g., insurance coverage, obesity rates) co-evolve geographically and over time in **Michigan vs. California**.
 
 - **Why Michigan & California:**  
-  Michigan experienced major industrial and economic shocks during this period. California serves as a contrasting case with different economic structures, population patterns, and health policy environments.
+  Michigan experienced major industrial and economic shocks during this period—notably the **Great Recession (2007–2009)**, when Michigan recorded the nation’s highest state unemployment rate in 2009 (13.6%) and monthly peaks above 15% ([BLS 2009 Annual Averages](https://www.bls.gov/news.release/archives/srgune_03032010.pdf), [BLS Economics Daily, Sep/Oct 2009](https://www.bls.gov/opub/ted/2009/ted_20091026.htm)). If extending beyond 2010, the **COVID-19** shock drove Michigan’s unemployment rate to **22.7%** in April 2020 ([BLS LAUS, Apr 2020](https://www.bls.gov/news.release/archives/laus_05222020.pdf), [Michigan DTMB Release](https://milmi.org/_docs/publications/Press_Releases/State0420.pdf)).  
+
+  California serves as a contrasting case with different economic structures, population patterns, and health policy environments—featuring a diversified economy across technology, agriculture, real estate, manufacturing, and health care ([PPIC: *California’s Economy*](https://www.ppic.org/publication/californias-economy/)) and a formal statewide **health equity** framework ([CDPH State Health Equity Plan](https://letsgethealthy.ca.gov/progress/state-health-equity-plan/)).  
+
+  In addition, California is one of the largest states, with wide **socioeconomic disparity** ([PPIC: *Income Inequality in California*](https://www.ppic.org/publication/income-inequality-in-california/)) and **58 counties** ([Wikipedia: List of Counties in California](https://en.wikipedia.org/wiki/List_of_counties_in_California)). Because of that, we feel it could provide elucidative county-level data.
+
+  California serves as a contrasting case with different economic structures, population patterns, and health policy environments. It has a diversified economy spanning technology, agriculture, and services ([California Economy, PPIC](https://www.ppic.org/publication/californias-future-economy)) and a strong emphasis on health equity in statewide policy ([California Health Equity Plan](https://letsgethealthy.ca.gov/progress/state-health-equity-plan)).  
+  In addition, California is one of the largest states, with wide socioeconomic disparities across regions ([UCLA Health Policy Profiles](https://healthpolicy.ucla.edu/our-work/publications/california-regional-health-profiles-report-2025)) and one of the greatest number of counties (58 total) ([U.S. Census Bureau](https://www.census.gov/library/reference/code-lists/ansi.html#county).  
+  Because of that, we feel it could provide elucidative county-level data.
+
 
 - **Why 1993–2010:**  
   - BRFSS underwent a major redesign in 2011 (cell phone sampling, weighting), breaking comparability with earlier data.  
@@ -32,13 +41,12 @@ to explore whether **economic shocks and unemployment trends** align spatially a
 
 ## 📊 Datasets
 
-| Dataset | Description | Years | Format | Access |
-|---------|-------------|-------|--------|--------|
-| **BRFSS** | Behavioral Risk Factor Surveillance System survey | 1990–2010 | ZIP → XPT → CSV/Parquet | [CDC](https://www.cdc.gov/brfss/annual_data/) |
-| **LAUS** | Local Area Unemployment Statistics | 1990–2010 | CSV, XLSX, JSON | [BLS LAU Portal](https://www.bls.gov/lau/data.htm) & [Direct Download](https://download.bls.gov/pub/time.series/la/) |
-| **
-| **FIPS / Geocodes** | County crosswalks & identifiers | 2017 vintage | XLSX | [Census Geocodes](https://www2.census.gov/programs-surveys/popest/geographies/2017/all-geocodes-v2017.xlsx) |
-| **(Historical)** Datalumos | Alternative LAUS source with header previews | 1990–2010 | CSV | [BLS.gov](https://download.bls.gov/pub/time.series/la/) OR [Drive Link](https://drive.google.com/drive/folders/1rPVdtOSz7vInRqKBDUe-VXzEK2rjw7G1?usp=share_link) (Requires UMICH Email) |
+| **Dataset** | **Description** | **Years** | **Format** | **Access** |
+|-------------|-----------------|-----------|------------|-------------|
+| **BRFSS** | Behavioral Risk Factor Surveillance System survey (demographics, insurance coverage, chronic conditions, behavioral health factors) | 1990–2010 | ZIP → XPT → CSV/Parquet | [CDC](https://www.cdc.gov/brfss/annual_data/annual_data.htm) · [Google Drive (XPT)](https://drive.google.com/drive/folders/19cZnp6dSbSjc8dWN2tNHnNjENVVDNgLN?direction=a) |
+| **LAUS** | Local Area Unemployment Statistics (unemployment rates, labor force size, employment ratios) | 1990–2010 | CSV, XLSX, JSON | [BLS LAU Portal](https://www.bls.gov/lau/data.htm) · [Direct Download](https://download.bls.gov/pub/time.series/la/) |
+| **FIPS / Geocodes** | County crosswalks & identifiers (2017 vintage) | 2017 | XLSX | [Census Geocodes](https://www2.census.gov/programs-surveys/popest/geographies/2017/all-geocodes-v2017.xlsx) |
+| **(Historical) Datalumos** | Alternative LAUS source with header previews | 1990–2010 | CSV | [BLS.gov](https://download.bls.gov/pub/time.series/la/) · [Google Drive](https://drive.google.com/drive/folders/1rPVdtOSz7vInRqKBDUe-VXzEK2rjw7G1?usp=share_link) (UMICH login required) · [DataLumos Archive](https://www.datalumos.org/datalumos/project/227042/version/V1/download/terms?path=/datalumos/227042/fcr:versions/V1&type=project) |
 
 Key BRFSS variables: demographics, insurance coverage, chronic conditions, behavioral health factors.  
 Key LAUS variables: unemployment rates, labor force size, employment ratios.
